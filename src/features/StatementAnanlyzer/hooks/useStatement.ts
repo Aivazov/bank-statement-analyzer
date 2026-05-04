@@ -1,4 +1,4 @@
-import { parseStatement } from '@/lib/csv-schema';
+import { parseStatement } from '@/lib/csvParser';
 import { ChangeEvent, useState } from 'react';
 import { Transaction } from '../schemas/transactionSchema';
 
@@ -10,7 +10,6 @@ export const useStatement = () => {
 
   const uploadFile = async (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
-
     if (!file) return;
 
     try {

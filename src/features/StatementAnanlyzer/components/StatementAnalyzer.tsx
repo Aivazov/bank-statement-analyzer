@@ -12,6 +12,7 @@ import TopFiveList from './TopFiveList';
 import ParseErrorNotifier from './ParseErrorNotifier';
 import FileUploader from './FileUploader';
 import FilterSelector from './FilterSelector';
+import { exportToCSV } from '@/lib/csvParser';
 
 const StatementAnalyzer = () => {
   const {
@@ -52,6 +53,13 @@ const StatementAnalyzer = () => {
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className='bg-zinc-900 border-zinc-700 text-zinc-200 placeholder:text-zinc-500 focus-visible:ring-zinc-700'
               />
+
+              <button
+                onClick={() => exportToCSV(filteredTransactions)}
+                className='px-4 py-2 bg-zinc-100 text-zinc-900 rounded-lg text-sm font-semibold hover:bg-zinc-300 transition-colors whitespace-nowrap'
+              >
+                Експорт CSV
+              </button>
             </div>
           </section>
 
