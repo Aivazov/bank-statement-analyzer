@@ -37,10 +37,7 @@ export const parseStatement = async (
 export const exportToCSV = (data: Transaction[]) => {
   if (data.length === 0) return;
 
-  console.log('data', data);
-
   const csv = Papa.unparse(data);
-  console.log('csv', csv);
 
   const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
   const url = URL.createObjectURL(blob);

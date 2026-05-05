@@ -11,7 +11,7 @@ export const handleSummary = (arr: Transaction[]) => {
     .filter((t) => t.amount < 0)
     .reduce((acc, curr) => acc + Math.abs(curr.amount), 0);
 
-  handleTopFiveCounterpartiesExpenses(arr);
+  // handleTopFiveCounterpartiesExpenses(arr);
   return {
     totalIncome,
     totalExpense,

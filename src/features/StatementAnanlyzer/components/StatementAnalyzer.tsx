@@ -67,7 +67,7 @@ const StatementAnalyzer = () => {
           <StatementTable filteredTransactions={filteredTransactions} />
 
           {/* Top FIVE */}
-          <TopFiveList topFive={topFive} />
+          {topFive.length > 0 && <TopFiveList topFive={topFive} />}
         </>
       )}
     </div>
