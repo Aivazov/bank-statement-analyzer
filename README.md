@@ -3,7 +3,7 @@
 1. Клонувати репозиторій:
 
 ```bash
-   git clone https://github.com/Aivazov/bank-statement-analyzer.git
+git clone https://github.com/Aivazov/bank-statement-analyzer.git
 ```
 
 2. Встановити залежності:
