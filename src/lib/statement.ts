@@ -11,13 +11,11 @@ export const handleSummary = (arr: Transaction[]) => {
     .filter((t) => t.amount < 0)
     .reduce((acc, curr) => acc + Math.abs(curr.amount), 0);
 
-  // handleTopFiveCounterpartiesExpenses(arr);
   return {
     totalIncome,
     totalExpense,
     netResult: totalIncome - totalExpense,
-    transactionsCount: arr.length, //because of "skipEmptyLines: true,"
-    // transactionsCount: arr.length - 1,
+    transactionsCount: arr.length,
   };
 };
 
