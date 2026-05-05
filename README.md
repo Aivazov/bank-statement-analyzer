@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Ініціалізація та запуск
 
-## Getting Started
-
-First, run the development server:
+1. Клонувати репозиторій:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+   git clone https://github.com/Aivazov/bank-statement-analyzer.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Встановити залежності:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Запустити сервер для розробки:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Відкрити [http://localhost:3000](http://localhost:3000) у своєму браузері, щоб переглянути результат.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## Труднощі
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+*   **Що було неочевидно:** Найбільше часу пішло на реалізацію надійної валідації CSV через Zod у поєднанні з потоковим парсингом PapaParse, щоб коректно відловлювати помилкові рядки та показувати їх кількість користувачу. Друге місце за складністю — statement.ts, де міститься логіка розрахунку топ-5 контрагентів за витратами
+*   **Технічний вибір:** Використав паттерн «Чиста функція» для розрахунків у `lib/statement.ts`, що дозволило покрити бізнес-логіку тестами Vitest незалежно від UI.
+*   **Особливості:** Додав бонусний функціонал експорту відфільтрованої таблиці назад у CSV та темну тему в стилі Zinc/Zinc-900 для комфортної роботи.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Технологічний стек
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+*   **Framework:** Next.js 15 (App Router), React 19
+*   **Language:** TypeScript (Strict mode)
+*   **Styling:** Tailwind CSS + shadcn/ui
+*   **Validation:** Zod
+*   **CSV Parsing:** PapaParse
+*   **Testing:** Vitest
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Скріншот головної сторінки
+
+![Головна сторінка застосунку](/public/app-screenshot.jpg)
+
